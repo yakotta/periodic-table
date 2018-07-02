@@ -1,0 +1,23 @@
+td {
+    background-color: white;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+td.s {
+    background-color: cyan;
+}
+
+td.p{
+    background-color: hotpink;
+}
+
+td.d {
+    background-color: yellow;
+}
+
+td.f {
+    background-color: greenyellow;
+}
