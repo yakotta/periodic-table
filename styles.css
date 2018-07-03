@@ -7,6 +7,7 @@ body {
 h1 {
     font-weight: normal;
     font-size: 28px;
+    text-align: center;
 }
 
 #ui {
@@ -28,6 +29,7 @@ table {
     margin-top: -40px;
     margin-left:auto; 
     margin-right:auto;
+    margin-bottom: 40px;
 }
 
 td {
@@ -67,6 +69,25 @@ td div.sym {
     vertical-align: middle;
 }
 
-.red {
-    color: black;
+#element-list {
+    text-align: inherit;
+}
+
+#element-list ul {
+    max-width: 500px;
+    text-align: left;
+}
+
+ul {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    list-style: none;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.fail {
+    color: white;
+    background-color: red;
 }
