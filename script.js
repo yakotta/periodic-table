@@ -31,7 +31,7 @@ $(document).ready(function(){
     $('#element-list').hide()
 
     // Listens for elements in the guess box
-    var points = elementList.length;
+    var points = 0;
     $('#guess-box').on('input', function(){
         var guess = $('#guess-box').val()
         for (i=0; i<elementList.length; i++) {
@@ -45,10 +45,29 @@ $(document).ready(function(){
                 str = 'li.' + elementList[i][0];
                 $(str).removeClass('fail');
 
-                points -= 1;
-                $('#remaining').html(points);
+                points += 1;
+                $('#points').html(points + "/" + elementList.length);
             }
         }
+    });
+
+    // Creates the timer
+    var timer = new Timer();
+    timer.addEventListener('secondsUpdated', function (e) {
+        $('#timer .values').html(timer.getTimeValues().toString().slice(3));
+    });
+    timer.addEventListener('targetAchieved', function (e) {
+        $('#timer .values').html("time's up!");
+        endgame();
+    });
+
+    // Starts the gamees
+    $('#start-button').click(function(){
+        $('#guess-box').prop('disabled', false)
+        $('#start-button').hide();
+        $('#ui .info').css('display', 'inline');
+        timer.start({countdown: true, startValues: {seconds: 600}});
+        $('#timer .values').html(timer.getTimeValues().toString().slice(3));
     });
 
     // Allows the player to quit
@@ -60,6 +79,7 @@ $(document).ready(function(){
     }
 
     $('#quit-button').click(function(){
+        timer.stop();
         endgame();
     });    
 });

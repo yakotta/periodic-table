@@ -1,7 +1,7 @@
 /* document-wide styles*/
 body {
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     font-family: Helvetica, sans-serif; /* I also like Roboto here?*/
 }
 
@@ -16,24 +16,32 @@ h1 {
     font-size: 12px;
 }
 
-#ui label {
-    font-size: 16px;
-}
-
 #ui input {
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     font-family: inherit;
     margin: 5px;
-}
-
-#ui button {
-    margin: 5px;
-    font-family: inherit;
 }
 
 #ui p {
     margin: 0;
+}
+
+#ui button {
+    font-family: inherit;
+}
+
+#ui .info {
+    display: none;
+}
+
+#timer {
+    display: inline;
+}
+
+#ui span.spacer {
+    content: ' ';
+    padding: 9px;
 }
 
 /*styles for the periodic table*/
@@ -72,12 +80,12 @@ td div.num {
     font-size: 11px;
     text-align: right;
     position: relative;
-    top: -9px;
+    top: -7px;
 }
 
 td div.sym {
     position: relative;
-    top: -4px;
+    top: -2px;
     vertical-align: middle;
 }
 
@@ -89,9 +97,6 @@ td div.sym {
 #element-list ul {
     max-width: 500px;
     text-align: left;
-}
-
-ul {
     columns: 3;
     -webkit-columns: 3;
     -moz-columns: 3;
