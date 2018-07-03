@@ -9,14 +9,23 @@ h1 {
     font-size: 28px;
 }
 
-input {
+#ui {
+    font-size: 12px;
+}
+
+#ui label {
+    font-size: 16px;
+}
+
+#ui input {
     text-align: center;
     font-size: 16px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+    margin: 5px;
 }
 
 table {
-    margin-top: -30px;
+    margin-top: -40px;
     margin-left:auto; 
     margin-right:auto;
 }
@@ -43,4 +52,21 @@ td.d {
 
 td.f {
     background-color: greenyellow;
+}
+
+td div.num {
+    font-size: 11px;
+    text-align: right;
+    position: relative;
+    top: -9px;
+}
+
+td div.sym {
+    position: relative;
+    top: -4px;
+    vertical-align: middle;
+}
+
+.red {
+    color: black;
 }
