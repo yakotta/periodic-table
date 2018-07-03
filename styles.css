@@ -1,7 +1,8 @@
+/* document-wide styles*/
 body {
     text-align: center;
     font-size: 16px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif; /* I also like Roboto here?*/
 }
 
 h1 {
@@ -10,6 +11,7 @@ h1 {
     text-align: center;
 }
 
+/* styles for the inputs and buttons*/
 #ui {
     font-size: 12px;
 }
@@ -21,10 +23,20 @@ h1 {
 #ui input {
     text-align: center;
     font-size: 16px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: inherit;
     margin: 5px;
 }
 
+#ui button {
+    margin: 5px;
+    font-family: inherit;
+}
+
+#ui p {
+    margin: 0;
+}
+
+/*styles for the periodic table*/
 table {
     margin-top: -40px;
     margin-left:auto; 
@@ -69,6 +81,7 @@ td div.sym {
     vertical-align: middle;
 }
 
+/*styles for the element list (revealed upong endgame())*/
 #element-list {
     text-align: inherit;
 }
@@ -87,7 +100,14 @@ ul {
     margin-right:auto;
 }
 
-.fail {
+/* styles for missed elements (revealed upon endgame())*/
+.cell.fail {
     color: white;
     background-color: red;
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+}
+
+li.fail {
+    color: red;
 }

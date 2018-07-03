@@ -9,7 +9,6 @@ $(document).ready(function(){
                 if(elements[k][i] != undefined){
                     var num = $('<div>').html(elements[k][i]['atomic_number']).addClass('num');
                     var sym = $('<div>').html(elements[k][i]['symbol']).addClass('sym');
-                    // var name = $('<div>').html(elements[k][i]['element']).addClass('name');
                     cell.html($('<span>').append(num).append(sym).addClass('element'));
                     cell.addClass(elements[k][i]['symbol']);
                     cell.addClass(elements[k][i]['orbital']);
@@ -23,9 +22,10 @@ $(document).ready(function(){
     }
 
     // Creates a list of element names and numbers
+    $('#element-list h1').html('Elements');
     for(i=0; i<elementList.length; i++){
         var item = $('<li>').html((i+1) + '. ' + elementList[i][1]).addClass(elementList[i][0]);
-        $('#element-list ul').append(item.addClass('red'));
+        $('#element-list ul').append(item.addClass('fail'));
         
     }
     $('#element-list').hide()
@@ -43,7 +43,7 @@ $(document).ready(function(){
                 $(str).show();
 
                 str = 'li.' + elementList[i][0];
-                $(str).removeClass('red');
+                $(str).removeClass('fail');
 
                 points -= 1;
                 $('#remaining').html(points);
@@ -56,7 +56,7 @@ $(document).ready(function(){
         $('#guess-box').prop('disabled', true)
         $('span.element').show();
         $('#element-list').show();
-        $('.cell').not($('.success')).addClass('fail').removeClass('s d p f');
+        $('.cell').not('.success').addClass('fail').removeClass('s d p f');
     }
 
     $('#quit-button').click(function(){
